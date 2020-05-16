@@ -12,6 +12,8 @@
             <table class="table">
                 <thead>
                     <th>Name</th>
+                    <th></th>
+                    <th></th>
                 </thead>
                 <tbody>
                     @foreach($categories as $category)
@@ -20,9 +22,9 @@
                                 {{ $category->name }}
                             </td>
                             <td>
-                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-sm">
-                                    Edit
-                                </a>
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-sm">Edit</a>
+                            </td>
+                            <td>
                                 <button class="btn btn-danger btn-sm" onClick="handleDelete({{ $category->id }})">Delete</button>
                             </td>
                         </tr>
