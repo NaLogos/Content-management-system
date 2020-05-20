@@ -18,6 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .btn-info{
+            color:#fff;
+        }
+    </style>
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -82,6 +88,11 @@
                         {{ session()->get('success') }}
                     </div>
                 @endif
+                @if(session()->has('error'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('error') }}
+                    </div>
+                @endif
 
                     <div class="row">
                         <div class="col-md-4">
@@ -91,6 +102,15 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a href="{{ route('categories.index') }}">Categories</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('tags.index') }}">Tags</a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-group mt-4">
+                                <li class="list-group-item">
+                                    <a href="{{ route('trashed-posts.index') }}">Trashed Post</a>
                                 </li>
                             </ul>
                         </div>
