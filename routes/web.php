@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
@@ -34,3 +32,11 @@ Route::middleware('auth')->group(function (){
 
     Route::put('/restore-post/{post}', 'PostsController@restore')->name('restore-post');
 });
+
+Route::middleware(['auth','admin'])->group(function (){         //auth must be called before admin for proper execution
+    Route::get('/users','UsersController@index')->name('users.index');
+    Route::post('/users/{user}/make-admin','UsersController@makeAdmin')->name('users.make-admin');
+    Route::get('/users/profile','UsersController@edit')->name('users.edit-profile');
+    Route::put('/users/profile','UsersController@update')->name('users.update-profile');
+});
+

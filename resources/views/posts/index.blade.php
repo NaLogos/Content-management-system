@@ -20,6 +20,8 @@
                         <th></th>
                         <th></th>
                     </thead>
+
+
                     <tbody>
                         @foreach($posts as $post)
                             <tr>

@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -61,12 +61,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+                                    <a class="dropdown-item" href="{{ route('users.edit-profile') }}">
+                                        My Profile
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -97,6 +102,11 @@
                     <div class="row">
                         <div class="col-md-4">
                             <ul class="list-group">
+                                @if(auth()->user()->isAdmin())
+                                    <li class="list-group-item">
+                                        <a href="{{ route('users.index') }}">Users</a>
+                                    </li>
+                                @endif
                                 <li class="list-group-item">
                                     <a href="{{ route('posts.index') }}">Post</a>
                                 </li>
@@ -124,6 +134,8 @@
             @endauth
         </main>
     </div>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
 </body>
 </html>
