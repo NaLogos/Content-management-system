@@ -37,6 +37,9 @@
                                             @csrf
                                             <button class="btn btn-success btn-sm">Make Admin</button>
                                         </form>
+                                        </td>
+                                        <td>
+                                        <a href="{{ route('admin.impersonate', $user->id) }}" class="btn btn-primary btn-sm ">Impersonate User</a>
                                     @endif
                                 </td>
                             </tr>

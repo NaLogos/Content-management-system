@@ -9,8 +9,7 @@ use App\Http\Requests\UpdateProfileRequest;
 class UsersController extends Controller
 {
     public function index(){
-        
-        return view('users.index')->with('users',User::all()); 
+        return view('users.index')->with('users',User::where('id','!=',7)->get()); 
     }
 
     public function makeAdmin(User $user){

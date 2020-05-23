@@ -29,14 +29,21 @@ Route::middleware('auth')->group(function (){
     Route::resource('/tags', 'TagsController');
 
     Route::get('/trashed-post','PostsController@trashed')->name('trashed-posts.index');
-
+    
     Route::put('/restore-post/{post}', 'PostsController@restore')->name('restore-post');
 });
 
 Route::middleware(['auth','admin'])->group(function (){         //auth must be called before admin for proper execution
     Route::get('/users','UsersController@index')->name('users.index');
+    
     Route::post('/users/{user}/make-admin','UsersController@makeAdmin')->name('users.make-admin');
+    
     Route::get('/users/profile','UsersController@edit')->name('users.edit-profile');
+    
     Route::put('/users/profile','UsersController@update')->name('users.update-profile');
+
+    Route::get('/admin/impersonate/user/{id}', 'Admin\ImpersonateController@index')->name('admin.impersonate');
 });
+
+Route::get('/admin/impersonate/destroy','Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
 
