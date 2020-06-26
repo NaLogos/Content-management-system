@@ -103,7 +103,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js" integrity="sha256-2D+ZJyeHHlEMmtuQTVtXt1gl0zRLKr51OCxyFfmFIBM=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script>
-        flatpickr('#published_at',{enableTime: true})
+        flatpickr('#published_at',{
+            enableTime: true,
+            enableSeconds: true
+            })
 
         $(document).ready(function() {
             $('.tag-selector2').select2();

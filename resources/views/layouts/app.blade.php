@@ -132,7 +132,7 @@
 
                             <ul class="list-group mt-4">
                                 <li class="list-group-item">
-                                    <a href="{{ route('trashed-posts.index') }}">Trashed Post</a>
+                                    <a href="{{ route('trashed-posts.index') }}">Trashed Posts</a>
                                 </li>
                             </ul>
                         </div>
