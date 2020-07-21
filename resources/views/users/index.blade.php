@@ -21,28 +21,30 @@
 
                     <tbody>
                         @foreach($users as $user)
-                            <tr>
-                                <td>
-                                    <img src="{{ Gravatar::src($user->email) }}" width="40px" height="40px" style="border-radius: 50%" alt="img"/> 
-                                </td>
-                                <td>
-                                    {{ $user->name }}
-                                </td>
-                                <td>
-                                    {{ $user->email }}
-                                </td>
-                                <td>
-                                    @if(!$user->isAdmin())
-                                        <form action="{{ route('users.make-admin', $user->id) }}" method="POST">
-                                            @csrf
-                                            <button class="btn btn-success btn-sm">Make Admin</button>
-                                        </form>
-                                        </td>
-                                        <td>
-                                        <a href="{{ route('admin.impersonate', $user->id) }}" class="btn btn-primary btn-sm ">Impersonate User</a>
-                                    @endif
-                                </td>
-                            </tr>
+                            @if($user->id != 4)
+                                <tr>
+                                    <td>
+                                        <img src="{{ Gravatar::src($user->email) }}" width="40px" height="40px" style="border-radius: 50%" alt="img"/> 
+                                    </td>
+                                    <td>
+                                        {{ $user->name }}
+                                    </td>
+                                    <td>
+                                        {{ $user->email }}
+                                    </td>
+                                    <td>
+                                        @if(!$user->isAdmin())
+                                            <form action="{{ route('users.make-admin', $user->id) }}" method="POST">
+                                                @csrf
+                                                <button class="btn btn-success btn-sm">Make Admin</button>
+                                            </form>
+                                            </td>
+                                            <td>
+                                            <a href="{{ route('admin.impersonate', $user->id) }}" class="btn btn-primary btn-sm ">Impersonate User</a>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

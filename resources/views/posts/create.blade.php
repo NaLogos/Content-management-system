@@ -105,7 +105,8 @@
     <script>
         flatpickr('#published_at',{
             enableTime: true,
-            enableSeconds: true
+            enableSeconds: true,
+            // mode: "multiple",
             })
 
         $(document).ready(function() {

@@ -104,7 +104,7 @@
                             @impersonate()
                                 <ul class="list-group mb-4">
                                     <li class="list-group-item">
-                                        <a href="{{ route('admin.impersonate.destroy') }}" class="btn btn-outline-info btn-block">{{session('impersonate')==7 ? 'Stop Simulation' : 'Stop Impersonation'}}</a>
+                                        <a href="{{ route('admin.impersonate.destroy') }}" class="btn btn-outline-info btn-block">{{session('impersonate')==4 ? 'Stop Simulation' : 'Stop Impersonation'}}</a>
                                     </li>
                                 </ul>
                             @endimpersonate
@@ -112,7 +112,7 @@
                             <ul class="list-group">
                                 @if(auth()->user()->isAdmin())
                                     <li class="list-group-item">
-                                        <a href="{{ route('admin.impersonate',7) }}">Simulate User</a>
+                                        <a href="{{ route('admin.impersonate',4) }}">Simulate User</a>
                                     </li>
                                     
                                     <li class="list-group-item">

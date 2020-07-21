@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
-Route::get('/blog/posts/{post}', 'Blog\PostsController@show')->name('blog.show'); //Second parameter is Just another way of calling the show method in PostsController
+Route::get('/blog/posts/{post}', 'Blog\PostsController@show')->name('blog.show'); 
 Route::get('blog/categories/{category}', 'Blog\PostsController@category')->name('blog.category');
 Route::get('blog/tags/{tag}', 'Blog\PostsController@tag')->name('blog.tag');
 

@@ -90,6 +90,6 @@ class PostsTableSeeder extends Seeder
 
         $post3->tags()->attach([$tag1->id,$tag3->id]);
 
-        $post1->tags()->attach([$tag1->id,$tag2->id,$tag3->id]);
+        $post4->tags()->attach([$tag1->id,$tag2->id,$tag3->id]);
     }
 }
