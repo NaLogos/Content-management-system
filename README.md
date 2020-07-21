@@ -41,7 +41,7 @@ A Content Management System App built with Laravel.
 - Run __php artisan key:generate__
 - Run __php artisan migrate --seed__ (it has some seeded data for your testing)
 - That's it: launch the main URL. 
-- You can login to admin/expert panel with credentials __zakaryaaffani35@gmail.com__ - __password__
+- You can login to admin panel with credentials __zakaryaaffani35@gmail.com__ - __password__
 - Click __Register__ to register as new user
 
 

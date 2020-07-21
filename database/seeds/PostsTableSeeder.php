@@ -23,6 +23,7 @@ class PostsTableSeeder extends Seeder
         $author1 = User::create([
             'name'     => 'John Doe',
             'email'    => 'jon@doe.com',
+            'role' => 'writer',
             'password' => Hash::make('password')
         ]);
 
@@ -33,6 +34,7 @@ class PostsTableSeeder extends Seeder
         $author2 = User::create([
             'name'     => 'Taha Elmail',
             'email'    => 'taha@elmail.com',
+            'role' => 'writer',
             'password' => Hash::make('password')
         ]);
 
